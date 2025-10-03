@@ -459,28 +459,16 @@
             <div class="gallery">
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <div class="gallery-icon" onclick="showPhotoGallery()">
+                        <div class="gallery-icon" onclick="showMergedGallery()">
                             <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                                <div style="font-size: 64px; margin-bottom: 12px;">📸</div>
+                                <div style="font-size: 64px; margin-bottom: 12px;">📸🎬</div>
                                 <div style="font-size: 18px; font-weight: bold; text-align: center;">Click Here</div>
                             </div>
                         </div>
                     </div>
                     <div class="gallery-info">
-                        <h4><span style="background: #ffeb3b; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;">My Recent Pics</span> [including time and date]</h4>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image" style="background: linear-gradient(45deg, #e74c3c, #c0392b);">
-                        <div class="gallery-icon" onclick="showVideoGallery()">
-                            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                                <div style="font-size: 64px; margin-bottom: 12px;">🎬</div>
-                                <div style="font-size: 18px; font-weight: bold; text-align: center;">Click Here</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-info">
-                        <h4><span style="background: #ffeb3b; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;">My Acting Clips</span> [only video clips with voiceover, no reels and no background music]</h4>
+                        <h4><span style="background: #ffeb3b; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;">My Recent Pics & Acting Clips</span></h4>
+                        <p>Photos with timestamps and video clips with voiceover only</p>
                     </div>
                 </div>
             </div>
@@ -540,119 +528,116 @@
             });
         });
 
-        // Photo Gallery Function
-        function showPhotoGallery() {
+        // Merged Gallery Function
+        function showMergedGallery() {
             const gallerySection = document.getElementById('gallery');
             gallerySection.innerHTML = `
                 <div class="container">
-                    <h2 class="section-title">📸 My Recent Photos</h2>
+                    <h2 class="section-title">Portfolio Gallery</h2>
                     <div style="text-align: center; margin-bottom: 30px;">
                         <button onclick="showMainGallery()" style="padding: 15px 35px; background: #e74c3c; color: white; border: none; border-radius: 30px; cursor: pointer; margin-right: 10px; font-size: 18px; font-weight: bold; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); transition: all 0.3s ease;" onmouseover="this.style.background='#c0392b'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#e74c3c'; this.style.transform='translateY(0)'">← Back to Gallery</button>
                     </div>
-                    <div class="gallery" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); max-width: 800px; margin: 0 auto;">
-                        <div class="gallery-item">
-                            <div class="gallery-image" style="background: linear-gradient(45deg, #3498db, #2980b9); height: 250px;">
-                                <div style="font-size: 64px;">📸</div>
+                    
+                    <!-- Photos Section -->
+                    <div style="margin-bottom: 60px;">
+                        <h3 style="text-align: center; font-size: 28px; margin-bottom: 30px; color: #2c3e50; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <span>📸</span> Recent Photos <span>📸</span>
+                        </h3>
+                        <div class="gallery">
+                            <div class="gallery-item">
+                                <div class="gallery-image" style="background: linear-gradient(45deg, #3498db, #2980b9); height: 250px;">
+                                    <div style="font-size: 64px;">📸</div>
+                                </div>
+                                <div class="gallery-info">
+                                    <div style="color: #666; font-size: 14px; margin-bottom: 10px;">December 15, 2024 - 3:30 PM</div>
+                                    <h4><span style="background: #ffeb3b; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;">Most Recent Professional Photo</span></h4>
+                                </div>
                             </div>
-                            <div class="gallery-info">
-                                <div style="color: #666; font-size: 14px; margin-bottom: 10px;">December 15, 2024 - 3:30 PM</div>
-                                <h4>Most Recent Professional Photo</h4>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="gallery-image" style="background: linear-gradient(45deg, #9b59b6, #8e44ad); height: 250px;">
-                                <div style="font-size: 64px;">📷</div>
-                            </div>
-                            <div class="gallery-info">
-                                <div style="color: #666; font-size: 14px; margin-bottom: 10px;">December 12, 2024 - 11:45 AM</div>
-                                <h4>Latest Casual Portrait</h4>
+                            <div class="gallery-item">
+                                <div class="gallery-image" style="background: linear-gradient(45deg, #9b59b6, #8e44ad); height: 250px;">
+                                    <div style="font-size: 64px;">📷</div>
+                                </div>
+                                <div class="gallery-info">
+                                    <div style="color: #666; font-size: 14px; margin-bottom: 10px;">December 12, 2024 - 11:45 AM</div>
+                                    <h4><span style="background: #ffeb3b; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;">Latest Casual Portrait</span></h4>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Videos Section -->
+                    <div style="margin-bottom: 40px;">
+                        <h3 style="text-align: center; font-size: 28px; margin-bottom: 30px; color: #2c3e50; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <span>🎬</span> Acting Video Clips <span>🎬</span>
+                        </h3>
+                        <div class="gallery">
+                            <div class="gallery-item">
+                                <video controls style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" 
+                                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <source src="videos/monologue-1.mp4" type="video/mp4">
+                                    <source src="video/monologue-1.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div style="background: linear-gradient(45deg, #e74c3c, #c0392b); height: 200px; cursor: pointer; display: none; align-items: center; justify-content: center; border-radius: 10px;">
+                                    <div style="background: rgba(255,255,255,0.2); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px;">▶️</div>
+                                </div>
+                                <div class="gallery-info">
+                                    <h4><span style="background: #ffeb3b; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;">Dramatic Monologue</span></h4>
+                                    <p style="color: #666; font-size: 14px;">2 minutes • Emotional scene with clear voiceover</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <video controls style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" 
+                                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <source src="videos/character-study.mp4" type="video/mp4">
+                                    <source src="video/character-study.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div style="background: linear-gradient(45deg, #9b59b6, #8e44ad); height: 200px; cursor: pointer; display: none; align-items: center; justify-content: center; border-radius: 10px;">
+                                    <div style="background: rgba(255,255,255,0.2); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px;">▶️</div>
+                                </div>
+                                <div class="gallery-info">
+                                    <h4><span style="background: #ffeb3b; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;">Character Study</span></h4>
+                                    <p style="color: #666; font-size: 14px;">1.5 minutes • Character development showcase</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <video controls style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" 
+                                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <source src="videos/dialogue-scene.mp4" type="video/mp4">
+                                    <source src="video/dialogue-scene.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div style="background: linear-gradient(45deg, #f39c12, #e67e22); height: 200px; cursor: pointer; display: none; align-items: center; justify-content: center; border-radius: 10px;">
+                                    <div style="background: rgba(255,255,255,0.2); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px;">▶️</div>
+                                </div>
+                                <div class="gallery-info">
+                                    <h4><span style="background: #ffeb3b; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;">Dialogue Scene</span></h4>
+                                    <p style="color: #666; font-size: 14px;">3 minutes • Conversational acting with clear audio</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <video controls style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" 
+                                       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <source src="videos/audition-tape.mp4" type="video/mp4">
+                                    <source src="video/audition-tape.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div style="background: linear-gradient(45deg, #27ae60, #2ecc71); height: 200px; cursor: pointer; display: none; align-items: center; justify-content: center; border-radius: 10px;">
+                                    <div style="background: rgba(255,255,255,0.2); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px;">▶️</div>
+                                </div>
+                                <div class="gallery-info">
+                                    <h4><span style="background: #ffeb3b; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;">Audition Tape</span></h4>
+                                    <p style="color: #666; font-size: 14px;">2.5 minutes • Professional audition recording</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div style="text-align: center; margin-top: 40px; padding: 20px; background: rgba(255,255,255,0.9); border-radius: 10px;">
-                        <h3>📝 How to Add Your Photos</h3>
-                        <p>Replace the placeholder icons with your actual photos by uploading them to an 'images/' folder and updating the HTML.</p>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Video Gallery Function  
-        function showVideoGallery() {
-            const gallerySection = document.getElementById('gallery');
-            gallerySection.innerHTML = `
-                <div class="container">
-                    <h2 class="section-title">🎬 My Acting Clips</h2>
-                    <div style="text-align: center; margin-bottom: 30px;">
-                        <button onclick="showMainGallery()" style="padding: 15px 35px; background: #e74c3c; color: white; border: none; border-radius: 30px; cursor: pointer; margin-right: 10px; font-size: 18px; font-weight: bold; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); transition: all 0.3s ease;" onmouseover="this.style.background='#c0392b'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#e74c3c'; this.style.transform='translateY(0)'">← Back to Gallery</button>
-                        <p style="margin: 10px 0; color: #666;">Video clips with voiceover - No reels, no background music</p>
-                    </div>
-                    <div class="gallery" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
-                        <div class="gallery-item">
-                            <video controls style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" 
-                                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <source src="videos/monologue-1.mp4" type="video/mp4">
-                                <source src="video/monologue-1.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div style="background: linear-gradient(45deg, #e74c3c, #c0392b); height: 200px; cursor: pointer; display: none; align-items: center; justify-content: center; border-radius: 10px;">
-                                <div style="background: rgba(255,255,255,0.2); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px;">▶️</div>
-                            </div>
-                            <div class="gallery-info">
-                                <h4>Dramatic Monologue</h4>
-                                <p style="color: #666; font-size: 14px;">2 minutes • Emotional scene with clear voiceover</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <video controls style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" 
-                                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <source src="videos/character-study.mp4" type="video/mp4">
-                                <source src="video/character-study.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div style="background: linear-gradient(45deg, #9b59b6, #8e44ad); height: 200px; cursor: pointer; display: none; align-items: center; justify-content: center; border-radius: 10px;">
-                                <div style="background: rgba(255,255,255,0.2); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px;">▶️</div>
-                            </div>
-                            <div class="gallery-info">
-                                <h4>Character Study</h4>
-                                <p style="color: #666; font-size: 14px;">1.5 minutes • Character development showcase</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <video controls style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" 
-                                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <source src="videos/dialogue-scene.mp4" type="video/mp4">
-                                <source src="video/dialogue-scene.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div style="background: linear-gradient(45deg, #f39c12, #e67e22); height: 200px; cursor: pointer; display: none; align-items: center; justify-content: center; border-radius: 10px;">
-                                <div style="background: rgba(255,255,255,0.2); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px;">▶️</div>
-                            </div>
-                            <div class="gallery-info">
-                                <h4>Dialogue Scene</h4>
-                                <p style="color: #666; font-size: 14px;">3 minutes • Conversational acting with clear audio</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <video controls style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" 
-                                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <source src="videos/audition-tape.mp4" type="video/mp4">
-                                <source src="video/audition-tape.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div style="background: linear-gradient(45deg, #27ae60, #2ecc71); height: 200px; cursor: pointer; display: none; align-items: center; justify-content: center; border-radius: 10px;">
-                                <div style="background: rgba(255,255,255,0.2); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px;">▶️</div>
-                            </div>
-                            <div class="gallery-info">
-                                <h4>Audition Tape</h4>
-                                <p style="color: #666; font-size: 14px;">2.5 minutes • Professional audition recording</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="text-align: center; margin-top: 40px; padding: 20px; background: rgba(255,255,255,0.9); border-radius: 10px;">
-                        <h3>🎥 Video File Names</h3>
-                        <p>Upload your videos with these exact names: monologue-1.mp4, character-study.mp4, dialogue-scene.mp4, audition-tape.mp4</p>
-                        <p>The videos will automatically play when you click on them!</p>
+                        <h3>📝 How to Add Your Content</h3>
+                        <p><strong>Photos:</strong> Upload to 'images/' folder • <strong>Videos:</strong> Upload with exact names: monologue-1.mp4, character-study.mp4, dialogue-scene.mp4, audition-tape.mp4</p>
+                        <p style="color: #666; font-size: 14px; margin-top: 10px;">Videos should have clear voiceover - No reels, no background music</p>
                     </div>
                 </div>
             `;
@@ -667,34 +652,24 @@
                     <div class="gallery">
                         <div class="gallery-item">
                             <div class="gallery-image">
-                                <div class="gallery-icon" onclick="showPhotoGallery()">
+                                <div class="gallery-icon" onclick="showMergedGallery()">
                                     <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                                        <div style="font-size: 64px; margin-bottom: 12px;">📸</div>
+                                        <div style="font-size: 64px; margin-bottom: 12px;">📸🎬</div>
                                         <div style="font-size: 18px; font-weight: bold; text-align: center;">Click Here</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="gallery-info">
-                                <h4><span style="background: #ffeb3b; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;">My Recent Pics</span> [including time and date]</h4>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="gallery-image" style="background: linear-gradient(45deg, #e74c3c, #c0392b);">
-                                <div class="gallery-icon" onclick="showVideoGallery()">
-                                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                                        <div style="font-size: 64px; margin-bottom: 12px;">🎬</div>
-                                        <div style="font-size: 18px; font-weight: bold; text-align: center;">Click Here</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="gallery-info">
-                                <h4><span style="background: #ffeb3b; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;">My Acting Clips</span> [only video clips with voiceover, no reels and no background music]</h4>
+                                <h4><span style="background: #ffeb3b; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;">My Recent Pics & Acting Clips</span></h4>
+                                <p>Photos with timestamps and video clips with voiceover only</p>
                             </div>
                         </div>
                     </div>
                 </div>
             `;
         }
+
+
 
         // Add scroll effect to header
         window.addEventListener('scroll', function() {
@@ -706,5 +681,5 @@
             }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'988e55a864a86efe',t:'MTc1OTUxNDM4MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'988e7e6143c73a37',t:'MTc1OTUxNjA0Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
