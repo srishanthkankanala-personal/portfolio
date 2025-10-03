@@ -21,8 +21,6 @@
             padding: 0 20px;
         }
 
-
-
         header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -138,16 +136,42 @@
         }
 
         .headshot {
-            width: 100%;
-            height: 400px;
+            width: 280px;
+            height: 280px;
             background: linear-gradient(45deg, #f39c12, #e67e22);
-            border-radius: 15px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 48px;
             color: white;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .profile-fallback {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .profile-fallback svg {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            opacity: 0.9;
         }
 
         .bio h3 {
@@ -208,13 +232,35 @@
 
         .gallery-image {
             width: 100%;
-            height: 250px;
+            height: 320px;
             background: linear-gradient(45deg, #3498db, #2980b9);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 36px;
             color: white;
+            position: relative;
+        }
+
+        .gallery-icon {
+            width: 180px;
+            height: 180px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-icon:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+            border-color: rgba(255, 255, 255, 0.5);
         }
 
         .gallery-info {
@@ -266,8 +312,6 @@
             text-align: center;
             padding: 30px 0;
         }
-
-
 
         @media (max-width: 768px) {
             .nav-links {
@@ -339,8 +383,6 @@
     </style>
 </head>
 <body>
-
-
     <header>
         <nav class="container">
             <div class="logo">Srishanth Kankanala</div>
@@ -356,7 +398,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Srishanth Kankanala</h1>
-                <p>Aspiring Actor & Performer</p>
+                <p>Aspiring Actor</p>
                 <a href="#contact" class="cta-button">Get In Touch</a>
             </div>
         </div>
@@ -366,28 +408,40 @@
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <div class="headshot">🎭</div>
+                <div class="headshot">
+                    <img src="images/profile-pic.jpg" alt="Srishanth Kankanala - Profile Picture" class="profile-image" 
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="profile-fallback" style="display: none;">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                        <p style="font-size: 16px; margin: 0; opacity: 0.9;">Profile Picture</p>
+                        <p style="font-size: 12px; margin: 5px 0 0 0; opacity: 0.7;">Upload as: images/profile-pic.jpg</p>
+                    </div>
+                </div>
                 <div class="bio">
-                    <h3>Aspiring Actor</h3>
+                    <h3>Personal Details</h3>
                     <p><strong>Name:</strong> Srishanth Kankanala</p>
                     <p><strong>Date of Birth:</strong> 8 December 2006</p>
                     <p><strong>Age:</strong> 19 years old</p>
                     <p><strong>Gender:</strong> Male</p>
+                    <p><strong>Height:</strong> 5'9"</p>
+                    <p><strong>Weight:</strong> 58 kg</p>
                     <p><strong>Education:</strong> BTech Computer Science Engineering, 2nd Year (2024-2028)</p>
                     <p><strong>Experience:</strong> No professional acting experience yet</p>
-                    <p>I am interested in acting, eager to begin my journey in the entertainment industry. <strong style="color: #000; background: #f0f0f0; padding: 4px 8px; border-radius: 4px; border: 1px solid #ddd;">"If an opportunity comes and you want me to drop my degree, I will definitely think about it" (only if necessary).</strong></p>
+                    <p>I am interested in acting, eager to begin my journey in the entertainment industry.</p>
                     <div class="stats">
                         <div class="stat">
                             <div class="stat-number">19</div>
                             <div class="stat-label">Years Old</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">2nd</div>
-                            <div class="stat-label">Year Student</div>
+                            <div class="stat-number">5'9"</div>
+                            <div class="stat-label">Height</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">0</div>
-                            <div class="stat-label">Experience</div>
+                            <div class="stat-number">58kg</div>
+                            <div class="stat-label">Weight</div>
                         </div>
                     </div>
                 </div>
@@ -400,17 +454,29 @@
             <h2 class="section-title">Portfolio Gallery</h2>
             <div class="gallery">
                 <div class="gallery-item">
-                    <div class="gallery-image">📸</div>
+                    <div class="gallery-image">
+                        <div class="gallery-icon" onclick="showPhotoGallery()">
+                            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                <div style="font-size: 64px; margin-bottom: 12px;">📸</div>
+                                <div style="font-size: 18px; font-weight: bold; text-align: center;">Click Here</div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="gallery-info">
                         <h4><span style="background: #ffeb3b; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;">My Recent Pics</span> [including time and date]</h4>
-                        <p><button onclick="openRecentPics()" style="color: #3498db; text-decoration: none; font-weight: 600; padding: 8px 15px; background: rgba(52, 152, 219, 0.1); border: none; border-radius: 20px; transition: all 0.3s ease; display: inline-block; margin-top: 10px; cursor: pointer;">📸 View My Recent Pics</button></p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-image">🎬</div>
+                    <div class="gallery-image" style="background: linear-gradient(45deg, #e74c3c, #c0392b);">
+                        <div class="gallery-icon" onclick="showVideoGallery()">
+                            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                <div style="font-size: 64px; margin-bottom: 12px;">🎬</div>
+                                <div style="font-size: 18px; font-weight: bold; text-align: center;">Click Here</div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="gallery-info">
                         <h4><span style="background: #ffeb3b; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;">My Acting Clips</span> [only video clips with voiceover, no reels and no background music]</h4>
-                        <p><button onclick="openActingClips()" style="color: #e74c3c; text-decoration: none; font-weight: 600; padding: 8px 15px; background: rgba(231, 76, 60, 0.1); border: none; border-radius: 20px; transition: all 0.3s ease; display: inline-block; margin-top: 10px; cursor: pointer;">🎥 Watch My Acting Clips</button></p>
                     </div>
                 </div>
             </div>
@@ -470,448 +536,153 @@
             });
         });
 
-        // Function to show recent pics with local image files
-        function openRecentPics() {
-            // Hide the main content
-            document.querySelector('.hero').style.display = 'none';
-            document.querySelector('#about').style.display = 'none';
-            document.querySelector('#gallery').style.display = 'none';
-            document.querySelector('#contact').style.display = 'none';
-            document.querySelector('footer').style.display = 'none';
-            
-            // Create the photo gallery page content
-            const photoContent = document.createElement('div');
-            photoContent.id = 'photo-page';
-            photoContent.innerHTML = `
-                <style>
-                    #photo-page {
-                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                        color: white;
-                        min-height: 100vh;
-                        padding-top: 100px;
-                    }
-                    .photo-container {
-                        max-width: 1200px;
-                        margin: 0 auto;
-                        padding: 40px 20px;
-                    }
-                    .photo-header {
-                        text-align: center;
-                        margin-bottom: 50px;
-                    }
-                    .photo-header h1 {
-                        font-size: 48px;
-                        margin-bottom: 20px;
-                        font-weight: 300;
-                    }
-                    .photo-header p {
-                        font-size: 20px;
-                        opacity: 0.9;
-                    }
-                    .photos-grid {
-                        display: grid;
-                        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-                        gap: 30px;
-                        margin-bottom: 40px;
-                    }
-                    .photo-card {
-                        background: rgba(255, 255, 255, 0.1);
-                        backdrop-filter: blur(10px);
-                        border-radius: 20px;
-                        padding: 25px;
-                        text-align: center;
-                        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-                    }
-                    .photo-card h3 {
-                        font-size: 20px;
-                        margin-bottom: 15px;
-                        color: #ffeb3b;
-                    }
-                    .photo-display {
-                        width: 100%;
-                        height: 300px;
-                        border-radius: 15px;
-                        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-                        margin-bottom: 15px;
-                        object-fit: cover;
-                        background: #000;
-                    }
-                    .photo-fallback {
-                        background: linear-gradient(45deg, #3498db, #2980b9);
-                        height: 300px;
-                        border-radius: 15px;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        color: white;
-                        margin-bottom: 15px;
-                        padding: 20px;
-                        text-align: center;
-                    }
-                    .back-button {
-                        display: inline-block;
-                        padding: 15px 30px;
-                        background: #e74c3c;
-                        color: white;
-                        text-decoration: none;
-                        border-radius: 50px;
-                        font-weight: 600;
-                        transition: all 0.3s ease;
-                        box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
-                        cursor: pointer;
-                        border: none;
-                        font-size: 16px;
-                    }
-                    .back-button:hover {
-                        background: #c0392b;
-                        transform: translateY(-2px);
-                        box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
-                    }
-                    .footer-note {
-                        text-align: center;
-                        margin-top: 40px;
-                        opacity: 0.8;
-                    }
-                    .file-structure {
-                        background: rgba(0, 0, 0, 0.3);
-                        padding: 20px;
-                        border-radius: 10px;
-                        margin: 20px 0;
-                        font-family: monospace;
-                        font-size: 14px;
-                        text-align: left;
-                    }
-                    @media (max-width: 768px) {
-                        .photos-grid {
-                            grid-template-columns: 1fr;
-                        }
-                        .photo-header h1 {
-                            font-size: 36px;
-                        }
-                        .photo-display, .photo-fallback {
-                            height: 250px;
-                        }
-                    }
-                </style>
-                <div class="photo-container">
-                    <div class="photo-header">
-                        <h1>📸 My Recent Pics</h1>
-                        <p>Srishanth Kankanala - Aspiring Actor</p>
+        // Photo Gallery Function
+        function showPhotoGallery() {
+            const gallerySection = document.getElementById('gallery');
+            gallerySection.innerHTML = `
+                <div class="container">
+                    <h2 class="section-title">📸 My Recent Photos</h2>
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <button onclick="showMainGallery()" style="padding: 10px 20px; background: #e74c3c; color: white; border: none; border-radius: 25px; cursor: pointer; margin-right: 10px;">← Back to Gallery</button>
                     </div>
-                    
-                    <div class="photos-grid">
-                        <div class="photo-card">
-                            <h3>📷 Recent Photo 1</h3>
-                            <img src="images/recent-pic-1.jpg" alt="Srishanth Kankanala - Recent Photo 1" class="photo-display" 
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="photo-fallback" style="display: none;">
-                                <div style="font-size: 64px; margin-bottom: 20px;">📸</div>
-                                <p style="font-size: 18px; margin-bottom: 15px;"><strong>Photo file not found</strong></p>
-                                <p style="font-size: 14px; opacity: 0.8; margin-bottom: 15px;">Upload your photo file as:</p>
-                                <code style="background: rgba(0,0,0,0.3); padding: 5px 10px; border-radius: 5px;">images/recent-pic-1.jpg</code>
+                    <div class="gallery" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                        <div class="gallery-item">
+                            <div class="gallery-image" style="background: linear-gradient(45deg, #3498db, #2980b9); height: 200px;">
+                                <div style="font-size: 48px;">📸</div>
                             </div>
-                            <p style="margin-top: 10px; font-size: 14px; opacity: 0.8;">
-                                <strong>Recent Photo 1</strong>
-                            </p>
+                            <div class="gallery-info">
+                                <div style="color: #666; font-size: 14px; margin-bottom: 10px;">December 15, 2024 - 3:30 PM</div>
+                                <h4>Professional Headshot 1</h4>
+                            </div>
                         </div>
-                        
-                        <div class="photo-card">
-                            <h3>📷 Recent Photo 2</h3>
-                            <img src="images/recent-pic-2.jpg" alt="Srishanth Kankanala - Recent Photo 2" class="photo-display" 
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="photo-fallback" style="display: none;">
-                                <div style="font-size: 64px; margin-bottom: 20px;">📸</div>
-                                <p style="font-size: 18px; margin-bottom: 15px;"><strong>Photo file not found</strong></p>
-                                <p style="font-size: 14px; opacity: 0.8; margin-bottom: 15px;">Upload your photo file as:</p>
-                                <code style="background: rgba(0,0,0,0.3); padding: 5px 10px; border-radius: 5px;">images/recent-pic-2.jpg</code>
+                        <div class="gallery-item">
+                            <div class="gallery-image" style="background: linear-gradient(45deg, #9b59b6, #8e44ad); height: 200px;">
+                                <div style="font-size: 48px;">📷</div>
                             </div>
-                            <p style="margin-top: 10px; font-size: 14px; opacity: 0.8;">
-                                <strong>Recent Photo 2</strong>
-                            </p>
+                            <div class="gallery-info">
+                                <div style="color: #666; font-size: 14px; margin-bottom: 10px;">December 12, 2024 - 11:45 AM</div>
+                                <h4>Casual Portrait</h4>
+                            </div>
                         </div>
-                        
-                        <div class="photo-card">
-                            <h3>📷 Recent Photo 3</h3>
-                            <img src="images/recent-pic-3.jpg" alt="Srishanth Kankanala - Recent Photo 3" class="photo-display" 
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="photo-fallback" style="display: none;">
-                                <div style="font-size: 64px; margin-bottom: 20px;">📸</div>
-                                <p style="font-size: 18px; margin-bottom: 15px;"><strong>Photo file not found</strong></p>
-                                <p style="font-size: 14px; opacity: 0.8; margin-bottom: 15px;">Upload your photo file as:</p>
-                                <code style="background: rgba(0,0,0,0.3); padding: 5px 10px; border-radius: 5px;">images/recent-pic-3.jpg</code>
+                        <div class="gallery-item">
+                            <div class="gallery-image" style="background: linear-gradient(45deg, #f39c12, #e67e22); height: 200px;">
+                                <div style="font-size: 48px;">🎭</div>
                             </div>
-                            <p style="margin-top: 10px; font-size: 14px; opacity: 0.8;">
-                                <strong>Recent Photo 3</strong>
-                            </p>
+                            <div class="gallery-info">
+                                <div style="color: #666; font-size: 14px; margin-bottom: 10px;">December 10, 2024 - 2:15 PM</div>
+                                <h4>Character Study Photo</h4>
+                            </div>
                         </div>
-                        
-                        <div class="photo-card">
-                            <h3>📷 Recent Photo 4</h3>
-                            <img src="images/recent-pic-4.jpg" alt="Srishanth Kankanala - Recent Photo 4" class="photo-display" 
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="photo-fallback" style="display: none;">
-                                <div style="font-size: 64px; margin-bottom: 20px;">📸</div>
-                                <p style="font-size: 18px; margin-bottom: 15px;"><strong>Photo file not found</strong></p>
-                                <p style="font-size: 14px; opacity: 0.8; margin-bottom: 15px;">Upload your photo file as:</p>
-                                <code style="background: rgba(0,0,0,0.3); padding: 5px 10px; border-radius: 5px;">images/recent-pic-4.jpg</code>
+                        <div class="gallery-item">
+                            <div class="gallery-image" style="background: linear-gradient(45deg, #27ae60, #2ecc71); height: 200px;">
+                                <div style="font-size: 48px;">📸</div>
                             </div>
-                            <p style="margin-top: 10px; font-size: 14px; opacity: 0.8;">
-                                <strong>Recent Photo 4</strong>
-                            </p>
+                            <div class="gallery-info">
+                                <div style="color: #666; font-size: 14px; margin-bottom: 10px;">December 8, 2024 - 4:20 PM</div>
+                                <h4>Professional Headshot 2</h4>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div style="text-align: center;">
-                        <button class="back-button" onclick="goBackToPortfolio()">← Back to Portfolio</button>
-                    </div>
-                    
-                    <div class="footer-note">
-                        <h4>📁 Required File Structure:</h4>
-                        <div class="file-structure">
-your-portfolio/<br>
-├── index.html<br>
-├── images/<br>
-│   ├── recent-pic-1.jpg<br>
-│   ├── recent-pic-2.jpg<br>
-│   ├── recent-pic-3.jpg<br>
-│   └── recent-pic-4.jpg<br>
-└── videos/<br>
-    ├── acting-clip-1.mp4<br>
-    └── acting-clip-2.mp4
-                        </div>
-                        <p><strong>Supported formats:</strong> JPG, PNG, WebP | <strong>Recommended:</strong> High-quality photos under 5MB each</p>
-                        <p>© 2024 Srishanth Kankanala</p>
+                    <div style="text-align: center; margin-top: 40px; padding: 20px; background: rgba(255,255,255,0.9); border-radius: 10px;">
+                        <h3>📝 How to Add Your Photos</h3>
+                        <p>Replace the placeholder icons with your actual photos by uploading them to an 'images/' folder and updating the HTML.</p>
                     </div>
                 </div>
             `;
-            
-            // Add the photo content to the page
-            document.body.appendChild(photoContent);
-            
-            // Scroll to top of the new page
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
         }
 
-        // Function to show acting clips with local video files
-        function openActingClips() {
-            // Hide the main content
-            document.querySelector('.hero').style.display = 'none';
-            document.querySelector('#about').style.display = 'none';
-            document.querySelector('#gallery').style.display = 'none';
-            document.querySelector('#contact').style.display = 'none';
-            document.querySelector('footer').style.display = 'none';
-            
-            // Create the video page content
-            const videoContent = document.createElement('div');
-            videoContent.id = 'video-page';
-            videoContent.innerHTML = `
-                <style>
-                    #video-page {
-                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                        color: white;
-                        min-height: 100vh;
-                        padding-top: 100px;
-                    }
-                    .video-container {
-                        max-width: 1200px;
-                        margin: 0 auto;
-                        padding: 40px 20px;
-                    }
-                    .video-header {
-                        text-align: center;
-                        margin-bottom: 50px;
-                    }
-                    .video-header h1 {
-                        font-size: 48px;
-                        margin-bottom: 20px;
-                        font-weight: 300;
-                    }
-                    .video-header p {
-                        font-size: 20px;
-                        opacity: 0.9;
-                    }
-                    .videos-grid {
-                        display: grid;
-                        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-                        gap: 40px;
-                        margin-bottom: 40px;
-                    }
-                    .video-card {
-                        background: rgba(255, 255, 255, 0.1);
-                        backdrop-filter: blur(10px);
-                        border-radius: 20px;
-                        padding: 30px;
-                        text-align: center;
-                        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-                    }
-                    .video-card h3 {
-                        font-size: 24px;
-                        margin-bottom: 20px;
-                        color: #ffeb3b;
-                    }
-                    .video-player {
-                        width: 100%;
-                        height: 350px;
-                        border-radius: 15px;
-                        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-                        margin-bottom: 20px;
-                        background: #000;
-                    }
-                    .video-fallback {
-                        background: linear-gradient(45deg, #667eea, #764ba2);
-                        height: 350px;
-                        border-radius: 15px;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        color: white;
-                        margin-bottom: 20px;
-                        padding: 20px;
-                        text-align: center;
-                    }
-                    .back-button {
-                        display: inline-block;
-                        padding: 15px 30px;
-                        background: #e74c3c;
-                        color: white;
-                        text-decoration: none;
-                        border-radius: 50px;
-                        font-weight: 600;
-                        transition: all 0.3s ease;
-                        box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
-                        cursor: pointer;
-                        border: none;
-                        font-size: 16px;
-                    }
-                    .back-button:hover {
-                        background: #c0392b;
-                        transform: translateY(-2px);
-                        box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
-                    }
-                    .footer-note {
-                        text-align: center;
-                        margin-top: 40px;
-                        opacity: 0.8;
-                    }
-                    .file-structure {
-                        background: rgba(0, 0, 0, 0.3);
-                        padding: 20px;
-                        border-radius: 10px;
-                        margin: 20px 0;
-                        font-family: monospace;
-                        font-size: 14px;
-                        text-align: left;
-                    }
-                    @media (max-width: 768px) {
-                        .videos-grid {
-                            grid-template-columns: 1fr;
-                        }
-                        .video-header h1 {
-                            font-size: 36px;
-                        }
-                        .video-player, .video-fallback {
-                            height: 250px;
-                        }
-                    }
-                </style>
-                <div class="video-container">
-                    <div class="video-header">
-                        <h1>🎬 My Acting Clips</h1>
-                        <p>Srishanth Kankanala - Aspiring Actor</p>
+        // Video Gallery Function  
+        function showVideoGallery() {
+            const gallerySection = document.getElementById('gallery');
+            gallerySection.innerHTML = `
+                <div class="container">
+                    <h2 class="section-title">🎬 My Acting Clips</h2>
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <button onclick="showMainGallery()" style="padding: 10px 20px; background: #e74c3c; color: white; border: none; border-radius: 25px; cursor: pointer; margin-right: 10px;">← Back to Gallery</button>
+                        <p style="margin: 10px 0; color: #666;">Video clips with voiceover - No reels, no background music</p>
                     </div>
-                    
-                    <div class="videos-grid">
-                        <div class="video-card">
-                            <h3>🎭 Acting Clip 1</h3>
-                            <video controls class="video-player" preload="metadata">
-                                <source src="videos/acting-clip-1.mp4" type="video/mp4">
-                                <source src="videos/acting-clip-1.webm" type="video/webm">
-                                <div class="video-fallback">
-                                    <div style="font-size: 64px; margin-bottom: 20px;">🎬</div>
-                                    <p style="font-size: 18px; margin-bottom: 15px;"><strong>Video file not found</strong></p>
-                                    <p style="font-size: 14px; opacity: 0.8; margin-bottom: 15px;">Upload your video file as:</p>
-                                    <code style="background: rgba(0,0,0,0.3); padding: 5px 10px; border-radius: 5px;">videos/acting-clip-1.mp4</code>
-                                </div>
-                            </video>
-                            <p style="margin-top: 15px; font-size: 14px; opacity: 0.8;">
-                                <strong>Acting Clip 1</strong> - Video with voiceover, no background music
-                            </p>
+                    <div class="gallery" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+                        <div class="gallery-item">
+                            <div class="gallery-image" style="background: linear-gradient(45deg, #e74c3c, #c0392b); height: 180px; cursor: pointer;" onclick="alert('Video player would open here. Upload your video as videos/monologue-1.mp4')">
+                                <div style="background: rgba(255,255,255,0.2); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px;">▶️</div>
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Dramatic Monologue</h4>
+                                <p style="color: #666; font-size: 14px;">2 minutes • Emotional scene with clear voiceover</p>
+                            </div>
                         </div>
-                        
-                        <div class="video-card">
-                            <h3>🎭 Acting Clip 2</h3>
-                            <video controls class="video-player" preload="metadata">
-                                <source src="videos/acting-clip-2.mp4" type="video/mp4">
-                                <source src="videos/acting-clip-2.webm" type="video/webm">
-                                <div class="video-fallback">
-                                    <div style="font-size: 64px; margin-bottom: 20px;">🎬</div>
-                                    <p style="font-size: 18px; margin-bottom: 15px;"><strong>Video file not found</strong></p>
-                                    <p style="font-size: 14px; opacity: 0.8; margin-bottom: 15px;">Upload your video file as:</p>
-                                    <code style="background: rgba(0,0,0,0.3); padding: 5px 10px; border-radius: 5px;">videos/acting-clip-2.mp4</code>
-                                </div>
-                            </video>
-                            <p style="margin-top: 15px; font-size: 14px; opacity: 0.8;">
-                                <strong>Acting Clip 2</strong> - Video with voiceover, no background music
-                            </p>
+                        <div class="gallery-item">
+                            <div class="gallery-image" style="background: linear-gradient(45deg, #9b59b6, #8e44ad); height: 180px; cursor: pointer;" onclick="alert('Video player would open here. Upload your video as videos/character-study.mp4')">
+                                <div style="background: rgba(255,255,255,0.2); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px;">▶️</div>
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Character Study</h4>
+                                <p style="color: #666; font-size: 14px;">1.5 minutes • Character development showcase</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-image" style="background: linear-gradient(45deg, #f39c12, #e67e22); height: 180px; cursor: pointer;" onclick="alert('Video player would open here. Upload your video as videos/dialogue-scene.mp4')">
+                                <div style="background: rgba(255,255,255,0.2); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px;">▶️</div>
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Dialogue Scene</h4>
+                                <p style="color: #666; font-size: 14px;">3 minutes • Conversational acting with clear audio</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-image" style="background: linear-gradient(45deg, #27ae60, #2ecc71); height: 180px; cursor: pointer;" onclick="alert('Video player would open here. Upload your video as videos/audition-tape.mp4')">
+                                <div style="background: rgba(255,255,255,0.2); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px;">▶️</div>
+                            </div>
+                            <div class="gallery-info">
+                                <h4>Audition Tape</h4>
+                                <p style="color: #666; font-size: 14px;">2.5 minutes • Professional audition recording</p>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div style="text-align: center;">
-                        <button class="back-button" onclick="goBackToPortfolio()">← Back to Portfolio</button>
-                    </div>
-                    
-                    <div class="footer-note">
-                        <h4>📁 Required File Structure:</h4>
-                        <div class="file-structure">
-your-portfolio/<br>
-├── index.html<br>
-├── videos/<br>
-│   ├── acting-clip-1.mp4<br>
-│   └── acting-clip-2.mp4<br>
-└── images/ (optional)<br>
-    └── headshot.jpg
-                        </div>
-                        <p><strong>Supported formats:</strong> MP4, WebM | <strong>Recommended:</strong> MP4 under 50MB each</p>
-                        <p>© 2024 Srishanth Kankanala</p>
+                    <div style="text-align: center; margin-top: 40px; padding: 20px; background: rgba(255,255,255,0.9); border-radius: 10px;">
+                        <h3>🎥 How to Add Your Videos</h3>
+                        <p>Replace the placeholders with your actual video files. Remember: Only clips with voiceover, no background music!</p>
                     </div>
                 </div>
             `;
-            
-            // Add the video content to the page
-            document.body.appendChild(videoContent);
-            
-            // Scroll to top of the new page
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
         }
-        
-        // Function to go back to portfolio
-        function goBackToPortfolio() {
-            // Remove the video page
-            const videoPage = document.getElementById('video-page');
-            if (videoPage) {
-                videoPage.remove();
-            }
-            
-            // Remove the photo page
-            const photoPage = document.getElementById('photo-page');
-            if (photoPage) {
-                photoPage.remove();
-            }
-            
-            // Show the main content again
-            document.querySelector('.hero').style.display = 'block';
-            document.querySelector('#about').style.display = 'block';
-            document.querySelector('#gallery').style.display = 'block';
-            document.querySelector('#contact').style.display = 'block';
-            document.querySelector('footer').style.display = 'block';
+
+        // Function to show main gallery
+        function showMainGallery() {
+            const gallerySection = document.getElementById('gallery');
+            gallerySection.innerHTML = `
+                <div class="container">
+                    <h2 class="section-title">Portfolio Gallery</h2>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <div class="gallery-icon" onclick="showPhotoGallery()">
+                                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                        <div style="font-size: 64px; margin-bottom: 12px;">📸</div>
+                                        <div style="font-size: 18px; font-weight: bold; text-align: center;">Click Here</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gallery-info">
+                                <h4><span style="background: #ffeb3b; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;">My Recent Pics</span> [including time and date]</h4>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-image" style="background: linear-gradient(45deg, #e74c3c, #c0392b);">
+                                <div class="gallery-icon" onclick="showVideoGallery()">
+                                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                        <div style="font-size: 64px; margin-bottom: 12px;">🎬</div>
+                                        <div style="font-size: 18px; font-weight: bold; text-align: center;">Click Here</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gallery-info">
+                                <h4><span style="background: #ffeb3b; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;">My Acting Clips</span> [only video clips with voiceover, no reels and no background music]</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
         }
 
         // Add scroll effect to header
@@ -924,5 +695,5 @@ your-portfolio/<br>
             }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9888f43101624463',t:'MTc1OTQ1Nzk1OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'988d96ad54851daf',t:'MTc1OTUwNjU1Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
