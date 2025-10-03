@@ -255,11 +255,15 @@
             border: 3px solid rgba(255, 255, 255, 0.3);
             transition: all 0.3s ease;
             cursor: pointer;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         .gallery-icon:hover {
             background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.1);
+            transform: translate(-50%, -50%) scale(1.1);
             border-color: rgba(255, 255, 255, 0.5);
         }
 
@@ -543,7 +547,7 @@
                 <div class="container">
                     <h2 class="section-title">📸 My Recent Photos</h2>
                     <div style="text-align: center; margin-bottom: 30px;">
-                        <button onclick="showMainGallery()" style="padding: 10px 20px; background: #e74c3c; color: white; border: none; border-radius: 25px; cursor: pointer; margin-right: 10px;">← Back to Gallery</button>
+                        <button onclick="showMainGallery()" style="padding: 15px 35px; background: #e74c3c; color: white; border: none; border-radius: 30px; cursor: pointer; margin-right: 10px; font-size: 18px; font-weight: bold; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); transition: all 0.3s ease;" onmouseover="this.style.background='#c0392b'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#e74c3c'; this.style.transform='translateY(0)'">← Back to Gallery</button>
                     </div>
                     <div class="gallery" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); max-width: 800px; margin: 0 auto;">
                         <div class="gallery-item">
@@ -580,7 +584,7 @@
                 <div class="container">
                     <h2 class="section-title">🎬 My Acting Clips</h2>
                     <div style="text-align: center; margin-bottom: 30px;">
-                        <button onclick="showMainGallery()" style="padding: 10px 20px; background: #e74c3c; color: white; border: none; border-radius: 25px; cursor: pointer; margin-right: 10px;">← Back to Gallery</button>
+                        <button onclick="showMainGallery()" style="padding: 15px 35px; background: #e74c3c; color: white; border: none; border-radius: 30px; cursor: pointer; margin-right: 10px; font-size: 18px; font-weight: bold; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); transition: all 0.3s ease;" onmouseover="this.style.background='#c0392b'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#e74c3c'; this.style.transform='translateY(0)'">← Back to Gallery</button>
                         <p style="margin: 10px 0; color: #666;">Video clips with voiceover - No reels, no background music</p>
                     </div>
                     <div class="gallery" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
@@ -702,5 +706,5 @@
             }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'988e31cd62a04463',t:'MTc1OTUxMjkxMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'988e55a864a86efe',t:'MTc1OTUxNDM4MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
