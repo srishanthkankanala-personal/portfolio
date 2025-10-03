@@ -346,13 +346,21 @@
                 margin-bottom: 5px;
             }
 
-            .contact-item > span:not(:first-child) {
+            .contact-item > span:not(:first-child):not(.contact-buttons) {
                 display: block;
                 margin: 5px 0;
             }
 
+            .contact-buttons {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 5px;
+                margin-top: 5px;
+            }
+
             .contact-item a {
-                margin: 5px 5px 5px 0;
+                margin: 0;
                 display: inline-block;
             }
 
@@ -462,15 +470,19 @@
                     <div class="contact-item">
                         <span>📧</span>
                         <span>srishanthkankanala@gmail.com</span>
-                        <span style="margin-left: 10px; margin-right: 5px; background: #ffeb3b; color: #000; padding: 2px 6px; border-radius: 4px; font-weight: bold;">Click here → </span>
-                        <a href="mailto:srishanthkankanala@gmail.com" target="_blank" rel="noopener noreferrer" style="color: #e74c3c; text-decoration: none; font-weight: 600; padding: 5px 10px; background: rgba(231, 76, 60, 0.1); border-radius: 15px; transition: all 0.3s ease;">Email</a>
+                        <span class="contact-buttons">
+                            <span style="margin-right: 5px; background: #ffeb3b; color: #000; padding: 2px 6px; border-radius: 4px; font-weight: bold;">Click here → </span>
+                            <a href="mailto:srishanthkankanala@gmail.com" target="_blank" rel="noopener noreferrer" style="color: #e74c3c; text-decoration: none; font-weight: 600; padding: 5px 10px; background: rgba(231, 76, 60, 0.1); border-radius: 15px; transition: all 0.3s ease;">Email</a>
+                        </span>
                     </div>
                     <div class="contact-item">
                         <span>📱</span>
                         <span>8096551491 (call or whatsapp)</span>
-                        <span style="margin-left: 10px; margin-right: 5px; background: #ffeb3b; color: #000; padding: 2px 6px; border-radius: 4px; font-weight: bold;">Click here → </span>
-                        <a href="tel:8096551491" target="_blank" rel="noopener noreferrer" style="color: #007bff; text-decoration: none; font-weight: 600; padding: 5px 10px; background: rgba(0, 123, 255, 0.1); border-radius: 15px; transition: all 0.3s ease; margin-right: 5px;">Call</a>
-                        <a href="https://wa.me/918096551491" target="_blank" rel="noopener noreferrer" style="color: #25d366; text-decoration: none; font-weight: 600; padding: 5px 10px; background: rgba(37, 211, 102, 0.1); border-radius: 15px; transition: all 0.3s ease;">WhatsApp</a>
+                        <span class="contact-buttons">
+                            <span style="margin-right: 5px; background: #ffeb3b; color: #000; padding: 2px 6px; border-radius: 4px; font-weight: bold;">Click here → </span>
+                            <a href="tel:8096551491" target="_blank" rel="noopener noreferrer" style="color: #007bff; text-decoration: none; font-weight: 600; padding: 5px 10px; background: rgba(0, 123, 255, 0.1); border-radius: 15px; transition: all 0.3s ease; margin-right: 5px;">Call</a>
+                            <a href="https://wa.me/918096551491" target="_blank" rel="noopener noreferrer" style="color: #25d366; text-decoration: none; font-weight: 600; padding: 5px 10px; background: rgba(37, 211, 102, 0.1); border-radius: 15px; transition: all 0.3s ease;">WhatsApp</a>
+                        </span>
                     </div>
                     <div class="contact-item">
                         <span>📍</span>
@@ -956,5 +968,6 @@ your-portfolio/<br>
             }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9888dc8436954463',t:'MTc1OTQ1Njk4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9888e46af2024463',t:'MTc1OTQ1NzMxMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
