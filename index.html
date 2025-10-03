@@ -21,35 +21,7 @@
             padding: 0 20px;
         }
 
-        .mobile-notice {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: #e74c3c;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            z-index: 2000;
-            font-size: 14px;
-            font-weight: 600;
-        }
 
-        .phone-icon {
-            display: inline-block;
-            font-size: 20px;
-            margin-right: 8px;
-            animation: rotate 2s infinite linear;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            25% { transform: rotate(90deg); }
-            50% { transform: rotate(180deg); }
-            75% { transform: rotate(270deg); }
-            100% { transform: rotate(360deg); }
-        }
 
         header {
             background: rgba(255, 255, 255, 0.95);
@@ -295,19 +267,7 @@
             padding: 30px 0;
         }
 
-        @media (max-width: 768px) and (orientation: portrait) {
-            .mobile-notice {
-                display: block;
-            }
-            
-            header {
-                margin-top: 50px;
-            }
-            
-            .hero {
-                margin-top: 130px;
-            }
-        }
+
 
         @media (max-width: 768px) {
             .nav-links {
@@ -379,11 +339,7 @@
     </style>
 </head>
 <body>
-    <!-- Mobile Rotation Notice -->
-    <div class="mobile-notice">
-        <div class="phone-icon">📱</div>
-        <p>If you're watching on mobile, please flip it for better experience</p>
-    </div>
+
 
     <header>
         <nav class="container">
@@ -446,7 +402,7 @@
                 <div class="gallery-item">
                     <div class="gallery-image">📸</div>
                     <div class="gallery-info">
-                        <h4><span style="background: #ffeb3b; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;">My Recent Pics</span></h4>
+                        <h4><span style="background: #ffeb3b; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold;">My Recent Pics</span> [including time and date]</h4>
                         <p><button onclick="openRecentPics()" style="color: #3498db; text-decoration: none; font-weight: 600; padding: 8px 15px; background: rgba(52, 152, 219, 0.1); border: none; border-radius: 20px; transition: all 0.3s ease; display: inline-block; margin-top: 10px; cursor: pointer;">📸 View My Recent Pics</button></p>
                     </div>
                 </div>
@@ -478,11 +434,11 @@
                     <div class="contact-item">
                         <span>📱</span>
                         <span>8096551491 (call or whatsapp)</span>
-                        <span class="contact-buttons">
+                        <div class="contact-buttons">
                             <span style="margin-right: 5px; background: #ffeb3b; color: #000; padding: 2px 6px; border-radius: 4px; font-weight: bold;">Click here → </span>
                             <a href="tel:8096551491" target="_blank" rel="noopener noreferrer" style="color: #007bff; text-decoration: none; font-weight: 600; padding: 5px 10px; background: rgba(0, 123, 255, 0.1); border-radius: 15px; transition: all 0.3s ease; margin-right: 5px;">Call</a>
                             <a href="https://wa.me/918096551491" target="_blank" rel="noopener noreferrer" style="color: #25d366; text-decoration: none; font-weight: 600; padding: 5px 10px; background: rgba(37, 211, 102, 0.1); border-radius: 15px; transition: all 0.3s ease;">WhatsApp</a>
-                        </span>
+                        </div>
                     </div>
                     <div class="contact-item">
                         <span>📍</span>
@@ -968,6 +924,6 @@ your-portfolio/<br>
             }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9888e46af2024463',t:'MTc1OTQ1NzMxMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9888efef010c4463',t:'MTc1OTQ1Nzc4NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
 
