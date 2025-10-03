@@ -545,41 +545,23 @@
                     <div style="text-align: center; margin-bottom: 30px;">
                         <button onclick="showMainGallery()" style="padding: 10px 20px; background: #e74c3c; color: white; border: none; border-radius: 25px; cursor: pointer; margin-right: 10px;">← Back to Gallery</button>
                     </div>
-                    <div class="gallery" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                    <div class="gallery" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); max-width: 800px; margin: 0 auto;">
                         <div class="gallery-item">
-                            <div class="gallery-image" style="background: linear-gradient(45deg, #3498db, #2980b9); height: 200px;">
-                                <div style="font-size: 48px;">📸</div>
+                            <div class="gallery-image" style="background: linear-gradient(45deg, #3498db, #2980b9); height: 250px;">
+                                <div style="font-size: 64px;">📸</div>
                             </div>
                             <div class="gallery-info">
                                 <div style="color: #666; font-size: 14px; margin-bottom: 10px;">December 15, 2024 - 3:30 PM</div>
-                                <h4>Professional Headshot 1</h4>
+                                <h4>Most Recent Professional Photo</h4>
                             </div>
                         </div>
                         <div class="gallery-item">
-                            <div class="gallery-image" style="background: linear-gradient(45deg, #9b59b6, #8e44ad); height: 200px;">
-                                <div style="font-size: 48px;">📷</div>
+                            <div class="gallery-image" style="background: linear-gradient(45deg, #9b59b6, #8e44ad); height: 250px;">
+                                <div style="font-size: 64px;">📷</div>
                             </div>
                             <div class="gallery-info">
                                 <div style="color: #666; font-size: 14px; margin-bottom: 10px;">December 12, 2024 - 11:45 AM</div>
-                                <h4>Casual Portrait</h4>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="gallery-image" style="background: linear-gradient(45deg, #f39c12, #e67e22); height: 200px;">
-                                <div style="font-size: 48px;">🎭</div>
-                            </div>
-                            <div class="gallery-info">
-                                <div style="color: #666; font-size: 14px; margin-bottom: 10px;">December 10, 2024 - 2:15 PM</div>
-                                <h4>Character Study Photo</h4>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="gallery-image" style="background: linear-gradient(45deg, #27ae60, #2ecc71); height: 200px;">
-                                <div style="font-size: 48px;">📸</div>
-                            </div>
-                            <div class="gallery-info">
-                                <div style="color: #666; font-size: 14px; margin-bottom: 10px;">December 8, 2024 - 4:20 PM</div>
-                                <h4>Professional Headshot 2</h4>
+                                <h4>Latest Casual Portrait</h4>
                             </div>
                         </div>
                     </div>
@@ -603,7 +585,13 @@
                     </div>
                     <div class="gallery" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
                         <div class="gallery-item">
-                            <div class="gallery-image" style="background: linear-gradient(45deg, #e74c3c, #c0392b); height: 180px; cursor: pointer;" onclick="alert('Video player would open here. Upload your video as videos/monologue-1.mp4')">
+                            <video controls style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" 
+                                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <source src="videos/monologue-1.mp4" type="video/mp4">
+                                <source src="video/monologue-1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div style="background: linear-gradient(45deg, #e74c3c, #c0392b); height: 200px; cursor: pointer; display: none; align-items: center; justify-content: center; border-radius: 10px;">
                                 <div style="background: rgba(255,255,255,0.2); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px;">▶️</div>
                             </div>
                             <div class="gallery-info">
@@ -612,7 +600,13 @@
                             </div>
                         </div>
                         <div class="gallery-item">
-                            <div class="gallery-image" style="background: linear-gradient(45deg, #9b59b6, #8e44ad); height: 180px; cursor: pointer;" onclick="alert('Video player would open here. Upload your video as videos/character-study.mp4')">
+                            <video controls style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" 
+                                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <source src="videos/character-study.mp4" type="video/mp4">
+                                <source src="video/character-study.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div style="background: linear-gradient(45deg, #9b59b6, #8e44ad); height: 200px; cursor: pointer; display: none; align-items: center; justify-content: center; border-radius: 10px;">
                                 <div style="background: rgba(255,255,255,0.2); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px;">▶️</div>
                             </div>
                             <div class="gallery-info">
@@ -621,7 +615,13 @@
                             </div>
                         </div>
                         <div class="gallery-item">
-                            <div class="gallery-image" style="background: linear-gradient(45deg, #f39c12, #e67e22); height: 180px; cursor: pointer;" onclick="alert('Video player would open here. Upload your video as videos/dialogue-scene.mp4')">
+                            <video controls style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" 
+                                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <source src="videos/dialogue-scene.mp4" type="video/mp4">
+                                <source src="video/dialogue-scene.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div style="background: linear-gradient(45deg, #f39c12, #e67e22); height: 200px; cursor: pointer; display: none; align-items: center; justify-content: center; border-radius: 10px;">
                                 <div style="background: rgba(255,255,255,0.2); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px;">▶️</div>
                             </div>
                             <div class="gallery-info">
@@ -630,7 +630,13 @@
                             </div>
                         </div>
                         <div class="gallery-item">
-                            <div class="gallery-image" style="background: linear-gradient(45deg, #27ae60, #2ecc71); height: 180px; cursor: pointer;" onclick="alert('Video player would open here. Upload your video as videos/audition-tape.mp4')">
+                            <video controls style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;" 
+                                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <source src="videos/audition-tape.mp4" type="video/mp4">
+                                <source src="video/audition-tape.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div style="background: linear-gradient(45deg, #27ae60, #2ecc71); height: 200px; cursor: pointer; display: none; align-items: center; justify-content: center; border-radius: 10px;">
                                 <div style="background: rgba(255,255,255,0.2); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px;">▶️</div>
                             </div>
                             <div class="gallery-info">
@@ -640,8 +646,9 @@
                         </div>
                     </div>
                     <div style="text-align: center; margin-top: 40px; padding: 20px; background: rgba(255,255,255,0.9); border-radius: 10px;">
-                        <h3>🎥 How to Add Your Videos</h3>
-                        <p>Replace the placeholders with your actual video files. Remember: Only clips with voiceover, no background music!</p>
+                        <h3>🎥 Video File Names</h3>
+                        <p>Upload your videos with these exact names: monologue-1.mp4, character-study.mp4, dialogue-scene.mp4, audition-tape.mp4</p>
+                        <p>The videos will automatically play when you click on them!</p>
                     </div>
                 </div>
             `;
@@ -695,5 +702,5 @@
             }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'988d96ad54851daf',t:'MTc1OTUwNjU1Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'988e31cd62a04463',t:'MTc1OTUxMjkxMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
